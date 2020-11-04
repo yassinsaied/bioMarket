@@ -1,0 +1,16 @@
+App\Entity\Product:
+  attributes:
+    id:
+      groups: ["read_product"]
+    name:
+      groups: ["read_product"]
+    description:
+      groups: ["read_product"]
+    price:
+      groups: ["read_product"]
+    unite:
+      groups: ["read_product"]
+    pic:
+      groups: ["read_product"]
+    promo:
+      groups: ["read_product"]

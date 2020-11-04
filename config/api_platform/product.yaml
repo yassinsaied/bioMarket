@@ -1,0 +1,16 @@
+App\Entity\Product:
+  attributes:
+    normalization_context:
+      groups: ["read_product"]
+    # denormalization_context:
+    #   groups: ["write_Product"]
+
+  collectionOperations:
+    get:
+      path: /products
+  itemOperations:
+    get:
+      method: "GET"
+      path: "/product/{id}"
+      requirements:
+        id: '\d+'

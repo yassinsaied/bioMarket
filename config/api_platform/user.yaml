@@ -1,0 +1,18 @@
+App\Entity\user:
+  attributes:
+    normalization_context:
+      groups: ["read_user"]
+    denormalization_context:
+      groups: ["write_user"]
+
+  collectionOperations:
+    get:
+      path: /users
+    post:
+      path: /user
+  itemOperations:
+    get:
+      method: "GET"
+      path: "/user/{id}"
+      requirements:
+        id: '\d+'
