@@ -1,4 +1,4 @@
-App\Entity\user:
+App\Entity\User:
   attributes:
     normalization_context:
       groups: ["read_user"]
@@ -16,3 +16,5 @@ App\Entity\user:
       path: "/user/{id}"
       requirements:
         id: '\d+'
+    put: ~
+    delete: ~

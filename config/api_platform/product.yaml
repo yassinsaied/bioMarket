@@ -8,6 +8,8 @@ App\Entity\Product:
   collectionOperations:
     get:
       path: /products
+      filters: ["promo.range_filter"]
+
   itemOperations:
     get:
       method: "GET"

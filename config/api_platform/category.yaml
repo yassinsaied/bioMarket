@@ -4,6 +4,11 @@ App\Entity\Category:
       groups: ["read_category"]
     # denormalization_context:
     #   groups: ["write_category"]
+  properties:
+    products:
+      subresource:
+        resourceClass: 'App\Entity\Product'
+        collection: false
 
   collectionOperations:
     get:
