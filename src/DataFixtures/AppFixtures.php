@@ -38,7 +38,7 @@ class AppFixtures extends Fixture
         $faker->addProvider(new \FakerRestaurant\Provider\en_US\Restaurant($faker));
 
         $category = new Category;
-        $category->setName("fruits");
+        $category->setName("Fruits");
         $manager->persist($category);
 
         for ($i = 0; $i < 20; $i++) {
@@ -53,7 +53,7 @@ class AppFixtures extends Fixture
         }
 
         $category2 = new Category;
-        $category2->setName("vegetables");
+        $category2->setName("Vegetables");
         $manager->persist($category2);
 
         for ($i = 0; $i < 20; $i++) {
@@ -67,20 +67,80 @@ class AppFixtures extends Fixture
             $manager->persist($product2);
         }
 
+
         $category3 = new Category;
-        $category3->setName("meats");
+        $category3->setName("Fresh Products");
         $manager->persist($category3);
 
+        $category4 = new Category;
+        $category4->setName("Drink");
+        $manager->persist($category4);
+
+        $category5 = new Category;
+        $category5->setName("Meats");
+        $manager->persist($category5);
+
         for ($i = 0; $i < 30; $i++) {
-            $product3 = new Product;
-            $product3->setName($faker->meatName());
-            $product3->setDescription($faker->realText(50));
-            $product3->setPrice($faker->randomFloat(2, 1, 10));
-            $product3->setUnite($faker->randomElement(self::$unite));
-            $product3->setPromo($faker->numberBetween(10, 40));
-            $product3->setCategory($category3);
-            $manager->persist($product3);
+            $product4 = new Product;
+            $product4->setName($faker->meatName());
+            $product4->setDescription($faker->realText(50));
+            $product4->setPrice($faker->randomFloat(2, 1, 10));
+            $product4->setUnite($faker->randomElement(self::$unite));
+            $product4->setPromo($faker->numberBetween(10, 40));
+            $product4->setCategory($category5);
+            $manager->persist($product4);
         }
+
+
+        $category6 = new Category;
+        $category6->setName("Fish");
+        $manager->persist($category6);
+
+        for ($i = 0; $i < 30; $i++) {
+            $product5 = new Product;
+            $product5->setName($faker->meatName());
+            $product5->setDescription($faker->realText(50));
+            $product5->setPrice($faker->randomFloat(2, 1, 10));
+            $product5->setUnite($faker->randomElement(self::$unite));
+            $product5->setPromo($faker->numberBetween(10, 40));
+            $product5->setCategory($category6);
+            $manager->persist($product5);
+        }
+
+
+        $category7 = new Category;
+        $category7->setName("Beverage");
+        $manager->persist($category7);
+
+        for ($i = 0; $i < 30; $i++) {
+            $product6 = new Product;
+            $product6->setName($faker->beverageName());
+            $product6->setDescription($faker->realText(50));
+            $product6->setPrice($faker->randomFloat(2, 1, 10));
+            $product6->setUnite($faker->randomElement(self::$unite));
+            $product6->setPromo($faker->numberBetween(10, 40));
+            $product6->setCategory($category7);
+            $manager->persist($product6);
+        }
+
+        $category8 = new Category;
+        $category8->setName("milk");
+        $manager->persist($category8);
+
+        for ($i = 0; $i < 30; $i++) {
+            $product7 = new Product;
+            $product7->setName($faker->beverageName());
+            $product7->setDescription($faker->realText(50));
+            $product7->setPrice($faker->randomFloat(2, 1, 10));
+            $product7->setUnite($faker->randomElement(self::$unite));
+            $product7->setPromo($faker->numberBetween(10, 40));
+            $product7->setCategory($category8);
+            $manager->persist($product7);
+        }
+
+
+
+
         for ($i = 0; $i < 30; $i++) {
             $user = new User;
             $password = "password";

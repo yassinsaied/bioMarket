@@ -1,6 +1,10 @@
 App\Entity\Category:
   attributes:
     id:
-      groups: ["read_category", "read_category"]
+      groups: ["read_category", "read_product"]
     name:
-      groups: ["read_category", "read_category"]
+      groups: ["read_category", "read_product"]
+    parent:
+      groups: ["read_category", "read_product"]
+    children:
+      groups: ["read_category", "read_product"]

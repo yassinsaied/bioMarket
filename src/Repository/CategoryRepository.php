@@ -47,4 +47,15 @@ class CategoryRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+    public function findCategoryByParent()
+    {
+
+        return $this->createQueryBuilder('c')
+            ->where('c.parent is null')
+            ->leftJoin('c.children', 'child', 'WITH', 'child.parent = c')
+            ->getQuery()
+            ->getResult();
+    }
 }

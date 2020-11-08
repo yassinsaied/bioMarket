@@ -14,3 +14,5 @@ App\Entity\Product:
       groups: ["read_product"]
     promo:
       groups: ["read_product"]
+    category:
+      groups: ["read_product"]

@@ -13,6 +13,10 @@ App\Entity\Category:
   collectionOperations:
     get:
       path: /categorys
+    get_category:
+      method: "GET"
+      path: /categorybyparent
+      controller: App\Controller\CategoryController::categoryByParent
   itemOperations:
     get:
       method: "GET"

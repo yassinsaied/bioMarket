@@ -36,9 +36,21 @@ class Category
      */
     private $products;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
+     **/
+    protected $children;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     **/
+    protected $parent;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->children = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -98,5 +110,22 @@ class Category
         }
 
         return $this;
+    }
+
+    public function getChildren()
+    {
+        return $this->children;
+    }
+
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    public function setParent($parent)
+    {
+        if ($parent->getParent() == NULL) {
+            $this->parent = $parent;
+        }
     }
 }

@@ -9,7 +9,7 @@ api_platform:
     pagination:
       enabled: true
       client_enabled: true
-      client_items_per_page: false
+      client_items_per_page: true
       items_per_page: 30
 
   patch_formats:

@@ -47,4 +47,12 @@ class ProductRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+    public function getPromProducts()
+    {
+
+        return $this->createQueryBuilder('p')
+            ->andWhere();
+    }
 }
