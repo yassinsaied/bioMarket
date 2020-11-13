@@ -1,1 +1,4 @@
 App\Entity\user:
+  attributes:
+    id:
+      groups: ["read_user"]

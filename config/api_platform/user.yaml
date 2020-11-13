@@ -6,10 +6,10 @@ App\Entity\User:
       groups: ["write_user"]
 
   collectionOperations:
-    get:
-      path: /users
-    post:
-      path: /user
+    get: ~
+
+    post: ~
+
   itemOperations:
     get:
       method: "GET"
