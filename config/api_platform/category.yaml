@@ -2,8 +2,8 @@ App\Entity\Category:
   attributes:
     normalization_context:
       groups: ["read_category"]
-    # denormalization_context:
-    #   groups: ["write_category"]
+    denormalization_context:
+      groups: ["write_category"]
   properties:
     products:
       subresource:

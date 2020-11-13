@@ -1,0 +1,15 @@
+App\Entity\Order:
+  attributes:
+    normalization_context:
+      groups: ["read_order"]
+    denormalization_context:
+      groups: ["write_order"]
+
+  collectionOperations:
+    get: ~
+    post: ~
+
+  itemOperations:
+    get: ~
+    put: ~
+    delete: ~

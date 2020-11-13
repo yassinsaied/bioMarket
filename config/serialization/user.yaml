@@ -1,4 +1,4 @@
 App\Entity\user:
   attributes:
     id:
-      groups: ["read_user"]
+      groups: ["read_user" , read_order" , "write-order"]

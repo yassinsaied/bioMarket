@@ -2,8 +2,8 @@ App\Entity\Product:
   attributes:
     normalization_context:
       groups: ["read_product"]
-    # denormalization_context:
-    #   groups: ["write_Product"]
+    denormalization_context:
+      groups: ["write_Product"]
 
   collectionOperations:
     get:
@@ -11,8 +11,5 @@ App\Entity\Product:
       filters: ["promo.range_filter"]
 
   itemOperations:
-    get:
-      method: "GET"
-      path: "/product/{id}"
-      requirements:
-        id: '\d+'
+    get: ~
+    
