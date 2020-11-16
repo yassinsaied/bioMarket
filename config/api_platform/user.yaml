@@ -7,14 +7,8 @@ App\Entity\User:
 
   collectionOperations:
     get: ~
-
     post: ~
-
   itemOperations:
-    get:
-      method: "GET"
-      path: "/user/{id}"
-      requirements:
-        id: '\d+'
+    get: ~
     put: ~
     delete: ~

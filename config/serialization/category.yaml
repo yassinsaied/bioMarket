@@ -1,10 +1,14 @@
 App\Entity\Category:
   attributes:
     id:
-      groups: ["read_category", "read_product"]
+      groups: ["read_cat", "read_product"]
     name:
-      groups: ["read_category", "read_product"]
+      groups: ["read_cat", "write_cat", "read_product"]
+    description:
+      groups: ["read_cat", "write_cat"]
     parent:
-      groups: ["read_category", "read_product"]
+      groups: ["read_cat", "write_cat"]
+    products:
+      groups: ["read_cat"]
     children:
-      groups: ["read_category", "read_product"]
+      groups: ["read_cat"]

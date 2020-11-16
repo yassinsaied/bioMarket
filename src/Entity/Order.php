@@ -24,26 +24,32 @@ class Order
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime")
      */
-    
+
     private $sentAt;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\NotBlank(
+     *                     message="field address is required"
+     * 
+     * )
      */
     private $addressDelivery;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=Product::class, inversedBy="orders")
-     */
-    private $products;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Product::class, inversedBy="orders")
+     */
+    private $products;
+
+
 
     public function __construct()
     {
@@ -79,6 +85,18 @@ class Order
         return $this;
     }
 
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Product[]
      */
@@ -99,18 +117,6 @@ class Order
     public function removeProduct(Product $product): self
     {
         $this->products->removeElement($product);
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
 
         return $this;
     }

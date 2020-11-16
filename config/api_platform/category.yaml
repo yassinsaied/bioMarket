@@ -1,9 +1,9 @@
 App\Entity\Category:
   attributes:
     normalization_context:
-      groups: ["read_category"]
+      groups: ["read_cat"]
     denormalization_context:
-      groups: ["write_category"]
+      groups: ["write_cat"]
   properties:
     products:
       subresource:
@@ -17,6 +17,7 @@ App\Entity\Category:
       method: "GET"
       path: /categorybyparent
       controller: App\Controller\CategoryController::categoryByParent
+    #post: ~
   itemOperations:
     get:
       method: "GET"

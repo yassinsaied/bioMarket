@@ -1,18 +1,20 @@
 App\Entity\Product:
   attributes:
     id:
-      groups: ["read_product" , "read_order" , "write-order"]
+      groups: ["read_product", "read_cat", "read_order"]
     name:
-      groups: ["read_product" , "read_order" , "write-order"]
+      groups: ["read_product", "write_Product", "read_cat", "write_cat"]
     description:
-      groups: ["read_product" , "read_order" , "write-order"]
+      groups: ["read_product", "write_Product", "read_cat", "write_cat"]
     price:
-      groups: ["read_product" , "read_order" , "write-order"]
+      groups: ["read_product", "write_Product", "read_cat", "write_cat"]
     unite:
-      groups: ["read_product" , "read_order" , "write-order"]
+      groups: ["read_product", "write_Product", "read_cat", "write_cat"]
     pic:
-      groups: ["read_product" , "read_order" , "write-order"]
+      groups: ["read_product", "write_Product", "read_cat", "write_cat"]
     promo:
-      groups: ["read_product" , "read_order" , "write-order"]
+      groups: ["read_product", "write_Product", "read_cat", "write_cat"]
     category:
-      groups: ["read_product" , "read_order" , "write-order"]
+      groups: ["read_product", "write_Product"]
+    # orders:
+    #   groups: ["read_product"]

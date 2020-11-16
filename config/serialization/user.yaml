@@ -1,4 +1,14 @@
-App\Entity\user:
+App\Entity\User:
   attributes:
     id:
-      groups: ["read_user" , read_order" , "write-order"]
+      groups: ["read_user", "read_order"]
+    email:
+      groups: ["read_user", "write_user"]
+    firstName:
+      groups: ["read_user", "write_user"]
+    lastName:
+      groups: ["read_user", "write_user"]
+    password:
+      groups: ["write_user"]
+    roles:
+      groups: ["read_user"]

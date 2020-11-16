@@ -9,7 +9,9 @@ App\Entity\Product:
     get:
       path: /products
       filters: ["promo.range_filter"]
+    post: ~
 
   itemOperations:
     get: ~
-    
+    #put: ~
+    #delete: ~
