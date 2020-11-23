@@ -6,7 +6,9 @@ App\Entity\User:
       groups: ["write_user"]
 
   collectionOperations:
-    get: ~
+    get:
+      filters: ["user.search_filter"]
+
     post: ~
   itemOperations:
     get: ~
