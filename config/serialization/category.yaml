@@ -11,4 +11,4 @@ App\Entity\Category:
     products:
       groups: ["read_cat"]
     children:
-      groups: ["read_cat"]
+      groups: ["read_cat" , "read_product"]

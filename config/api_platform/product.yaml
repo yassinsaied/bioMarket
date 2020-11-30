@@ -8,7 +8,7 @@ App\Entity\Product:
   collectionOperations:
     get:
       path: /products
-      filters: ["promo.range_filter"]
+      filters: ["promo.range_filter" , "fast_search_product.search_filter"]
     post: ~
 
   itemOperations:

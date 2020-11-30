@@ -31,7 +31,15 @@ services:
   # please note that last definitions always *replace* previous ones
   promo.range_filter:
     parent: "api_platform.doctrine.orm.range_filter"
-    arguments: [{ promo: gt }]
+    arguments: [{ promo : gt }]
+    tags: ["api_platform.filter"]
+    autowire: false
+    autoconfigure: false
+    public: false
+
+  fast_search_product.search_filter:
+    parent: "api_platform.doctrine.orm.search_filter"
+    arguments: [{ name : partial}]
     tags: ["api_platform.filter"]
     autowire: false
     autoconfigure: false
