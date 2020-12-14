@@ -1,0 +1,12 @@
+App\Entity\OrderProduct:
+  attributes:
+    id:
+      groups: ["read_orderP", "write_orderP" , "write_order" , "read_order"]
+    commande:
+      groups: ["read_orderP", "write_orderP" , "write_order" , "read_order"]
+    product:
+      groups: ["read_orderP", "write_orderP" , "write_order" , "read_order"]
+    Qte:
+      groups: ["read_orderP", "write_orderP" , "write_order" , "read_order"]
+    amountProduct:
+      groups: ["read_orderP", "write_orderP" , "write_order" , "read_order"]  

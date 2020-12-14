@@ -1,9 +1,10 @@
-App\Entity\Order:
+App\Entity\OrderProduct:
   attributes:
     normalization_context:
-      groups: ["read_order"]
+      groups: ["read_orderP"]
     denormalization_context:
-      groups: ["write_order"]
+      groups: ["write_orderP"]
+
   collectionOperations:
     get: ~
     post: ~

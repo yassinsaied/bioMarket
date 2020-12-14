@@ -1,12 +1,12 @@
 App\Entity\Order:
   attributes:
     id:
-      groups: ["read_order", "write-order"]
+      groups: ["read_order", "write_order"]
     sentAt:
-      groups: ["read_order", "write-order"]
+      groups: ["read_order", "write_order"]
     addressDelivery:
-      groups: ["read_order", "write-order"]
+      groups: ["read_order", "write_order"]
     user:
-      groups: ["read_order", "write-order"]
-    products:
-      groups: ["read_order", "write-order"]
+      groups: ["read_order", "write_order"]
+    orderProducts:
+      groups: ["read_order", "write_order"]

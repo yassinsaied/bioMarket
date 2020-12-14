@@ -45,15 +45,18 @@ class Order
     private $user;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Product::class, inversedBy="orders")
+     * @ORM\OneToMany(targetEntity=OrderProduct::class, mappedBy="commande" , cascade={"persist"} , orphanRemoval=true)
      */
-    private $products;
+    private $orderProducts;
+
+  
 
 
 
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->orderProducts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -98,26 +101,34 @@ class Order
     }
 
     /**
-     * @return Collection|Product[]
+     * @return Collection|OrderProduct[]
      */
-    public function getProducts(): Collection
+    public function getOrderProducts(): Collection
     {
-        return $this->products;
+        return $this->orderProducts;
     }
 
-    public function addProduct(Product $product): self
+    public function addOrderProduct(OrderProduct $orderProduct): self
     {
-        if (!$this->products->contains($product)) {
-            $this->products[] = $product;
+        if (!$this->orderProducts->contains($orderProduct)) {
+            $this->orderProducts[] = $orderProduct;
+            $orderProduct->setCommande($this);
         }
 
         return $this;
     }
 
-    public function removeProduct(Product $product): self
+    public function removeOrderProduct(OrderProduct $orderProduct): self
     {
-        $this->products->removeElement($product);
+        if ($this->orderProducts->removeElement($orderProduct)) {
+            // set the owning side to null (unless already changed)
+            if ($orderProduct->getCommande() === $this) {
+                $orderProduct->setCommande(null);
+            }
+        }
 
         return $this;
     }
+
+    
 }
